@@ -23,9 +23,6 @@ if(file_exists(base_path(). '/vendor/fanamurov/larrock-category')){
 if(file_exists(base_path(). '/vendor/fanamurov/larrock-users')){
     $components[] = new \Larrock\ComponentUsers\UsersComponent();
 }
-if(file_exists(base_path(). '/vendor/fanamurov/larrock-contact')){
-    $components[] = new \Larrock\ComponentContact\ContactComponent();
-}
 
 return [
     'components' => $components
