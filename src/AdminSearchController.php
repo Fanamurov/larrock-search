@@ -3,7 +3,7 @@
 namespace Larrock\ComponentSearch;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 
 class AdminSearchController extends Controller
 {
@@ -11,7 +11,6 @@ class AdminSearchController extends Controller
     {
         $result = [];
         $text = $request->get('text');
-
         $components = \Config::get('larrock-admin-search.components');
 
         foreach ($components as $item){
