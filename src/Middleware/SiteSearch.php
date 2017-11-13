@@ -26,7 +26,7 @@ class SiteSearch
             }*/
             $config = config('larrock-search.components');
             foreach ($config as $item){
-                if($search_data = $item->search()){
+                if($search_data = $item->search(NULL)){
                     $data = array_merge($data, $search_data);
                 }
             }
