@@ -1,4 +1,4 @@
-<form id="search-autocomplite-full" class="form-search uk-form form-search-autocomplite uk-display-inline-block uk-width-1-1" method="get" action="/admin/search">
+<form id="search-autocomplite-full" class="form-search uk-form form-search-autocomplite uk-display-inline-block uk-width-1-1 uk-position-absolute" method="get" action="/admin/search">
     <div class="uk-form-row">
         <select name="query" class="uk-width-1-1 uk-form-large" id="search_site_full">
             <option value="@yield('title_search')">@yield('title_search')</option>
