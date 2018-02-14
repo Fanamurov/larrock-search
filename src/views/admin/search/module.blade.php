@@ -9,7 +9,7 @@
 
 @if(isset($search_data))
     <script type="text/javascript">
-        $('#search_site_full').selectize({
+        $('#search_site_full, .form-search-autocomplite').selectize({
             maxItems: 1,
             valueField: 'full_url',
             labelField: 'title',
