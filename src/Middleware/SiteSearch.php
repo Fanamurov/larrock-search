@@ -9,14 +9,14 @@ class SiteSearch
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param  \Illuminate\Http\Request $request
+     * @param  \Closure $next
      * @return mixed
+     * @throws \Throwable
      */
     public function handle($request, Closure $next)
     {
-        $data = Cache::remember('siteSearch', 1440, function(){
+        $data = Cache::rememberForever('siteSearch', function(){
             $data = [];
             $config = config('larrock-search.components');
             foreach ($config as $item){
