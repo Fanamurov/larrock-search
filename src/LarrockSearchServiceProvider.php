@@ -17,7 +17,6 @@ class LarrockSearchServiceProvider extends ServiceProvider
     {
         $this->loadRoutesFrom(__DIR__.'/routes.php');
         $this->loadViewsFrom(__DIR__.'/views', 'larrock');
-
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/vendor/larrock'),
             __DIR__.'/config/larrock-admin-search.php' => config_path('larrock-admin-search.php'),

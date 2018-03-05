@@ -1,15 +1,15 @@
-<form id="search-autocomplite-full" class="form-search uk-form form-search-autocomplite uk-display-inline-block uk-width-1-1 uk-position-absolute" method="get" action="/admin/search">
-    <div class="uk-form-row">
-        <select name="query" class="uk-width-1-1 uk-form-large" id="search_site_full">
+<div class="uk-navbar-item">
+    <form method="get" action="/admin/search">
+        <select name="query" class="uk-form-width-medium form-search-autocomplite">
             <option value="@yield('title_search')">@yield('title_search')</option>
         </select>
         {{ csrf_field() }}
-    </div>
-</form>
+    </form>
+</div>
 
 @if(isset($search_data))
     <script type="text/javascript">
-        $('#search_site_full, .form-search-autocomplite').selectize({
+        $('.form-search-autocomplite').selectize({
             maxItems: 1,
             valueField: 'full_url',
             labelField: 'title',
@@ -17,12 +17,11 @@
             persist: true,
             createOnBlur: false,
             create: false,
-            plugins: ['remove_button'],
             allowEmptyOption: true,
-            sortField: {
+            /*sortField: {
                 field: 'title',
                 direction: 'asc'
-            },
+            },*/
             placeholder: 'Поиск по сайту',
             options: [
                     @foreach($search_data as $item)
@@ -49,5 +48,5 @@
         });
     </script>
 @else
-    <p class="alert alert-danger">Middleware SiteSearchAdmin not loaded!</p>
+    <p class="uk-alert uk-alert-danger">Middleware SiteSearchAdmin not loaded!</p>
 @endif
