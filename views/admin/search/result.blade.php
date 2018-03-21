@@ -28,7 +28,7 @@
                             <th>{{ $app->rows['title']->title }}</th>
                         @endif
                         @foreach($app->rows as $row)
-                            @if($row->in_table_admin_ajax_editable || $row->in_table_admin)
+                            @if($row->inTableAdminEditable || $row->inTableAdmin)
                                 <th style="width: 90px" @if($row->name !== 'active') class="uk-hidden-small" @endif>{{ $row->title }}</th>
                             @endif
                         @endforeach
@@ -57,7 +57,7 @@
                                 </td>
                             @endif
                             @foreach($app->rows as $row)
-                                @if($row->in_table_admin_ajax_editable)
+                                @if($row->inTableAdminEditable)
                                     @if($row instanceof \Larrock\Core\Helpers\FormBuilder\FormCheckbox)
                                         <td class="row-active @if($row->name !== 'active') uk-hidden-small @endif">
                                             <div class="uk-button-group btn-group_switch_ajax" role="group" style="width: 100%">
@@ -77,7 +77,7 @@
                                         </td>
                                     @endif
                                 @endif
-                                @if($row->in_table_admin)
+                                @if($row->inTableAdmin)
                                     <td>
                                         {{ $data_value->{$row->name} }}
                                     </td>
