@@ -23,8 +23,8 @@ class AdminSearchController extends Controller
         $text = $request->get('text');
         $components = \Config::get('larrock-admin-search.components');
 
-        foreach ($components as $item){
-            if($item->searchable){
+        foreach ($components as $item) {
+            if ($item->searchable) {
                 $item->search = $item->model::search($text)->get();
                 $result[$item->name] = $item;
             }
@@ -39,16 +39,18 @@ class AdminSearchController extends Controller
      */
     public function initSearchModule()
     {
-        $data = Cache::rememberForever('siteSearchAdmin', function(){
+        $data = Cache::rememberForever('siteSearchAdmin', function () {
             $data = [];
             $config = config('larrock-admin-search.components');
-            foreach ($config as $item){
-                if($search_data = $item->search(TRUE)){
+            foreach ($config as $item) {
+                if ($search_data = $item->search(true)) {
                     $data = array_merge($data, $search_data);
                 }
             }
+
             return $data;
         });
+
         return response()->json($data);
     }
 }

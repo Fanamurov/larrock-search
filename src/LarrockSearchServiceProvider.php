@@ -30,8 +30,8 @@ class LarrockSearchServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom( __DIR__.'/../config/larrock-admin-search.php', 'larrock-admin-search');
-        $this->mergeConfigFrom( __DIR__.'/../config/larrock-search.php', 'larrock-search');
+        $this->mergeConfigFrom(__DIR__.'/../config/larrock-admin-search.php', 'larrock-admin-search');
+        $this->mergeConfigFrom(__DIR__.'/../config/larrock-search.php', 'larrock-search');
 
         $this->app['router']->aliasMiddleware('SiteSearch', SiteSearch::class);
     }
